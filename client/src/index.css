@@ -1,0 +1,23 @@
+.item-button button {
+    width: 150px;
+    margin-top: 20px;
+    background-color: gray;
+    color: white;
+}
+
+
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 12000x;
+    z-index: 100;
+
+}
+
+.spinner-grow {
+    height: 100px;
+    width: 100px;
+}
