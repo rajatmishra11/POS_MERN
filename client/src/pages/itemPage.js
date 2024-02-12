@@ -32,6 +32,22 @@ const itemPage = () => {
     }
   };
 
+  const deleteItem = (record) => {
+    dispatch({ type: "showLoading" });
+    axios
+      .post("/api/items/delete-item", { itemId: record._id })
+      .then((response) => {
+        dispatch({ type: "hideLoading" });
+        message.success("Item deleted successdully");
+        getAllItems();
+      })
+      .catch((error) => {
+        dispatch({ type: "hideLoading" });
+        message.error("Something went wrong");
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     getAllItems();
   }, []);
@@ -50,15 +66,15 @@ const itemPage = () => {
       title: "Actions",
       dataIndex: "_id",
       render: (id, record) => (
-        <div>
-          <DeleteOutlined style={{ cursor: "pointer" }} />
+        <div className="d-flex">
           <EditOutlined
-            style={{ cursor: "pointer" }}
+            className="mx-2"
             onClick={() => {
               setEditItem(record);
               setPopupModel(true);
             }}
           />
+          <DeleteOutlined className="mx-2" onClick={() => deleteItem(record)} />
         </div>
       ),
     },
