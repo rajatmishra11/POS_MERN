@@ -24,7 +24,7 @@
     border: 2px solid rgb(179, 176, 176);
     margin-right: 50px;
     align-items: center;
-    padding-left: 25px;
+    padding: 8px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -35,9 +35,9 @@
 }
 
 .category img {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
     margin: -3px;
+    border: 2px solid rgb(179, 176, 176);
 }
 
 .category-active {
