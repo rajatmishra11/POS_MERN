@@ -62,15 +62,15 @@
     width: 400px;
 }
 
-.register h3{
+.register h3 {
     text-align: center;
     color: #3c3c3c;
     font-weight: bold;
     padding: 10px;
 }
 
-.register Form{
-    background-color:  rgb(186, 240, 235);
+.register Form {
+    background-color: rgb(186, 240, 235);
     padding: 20px;
     border: 2px solid gray;
     border-radius: 10px;

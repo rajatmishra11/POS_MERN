@@ -9,7 +9,7 @@ const Register = () => {
   return (
     <div  className="register d-flex ">
       <h3>New User</h3>
-      <Form  layout="vertical" onFinish={handleSubmit}>
+      <Form   layout="vertical" onFinish={handleSubmit}>
         <Form.Item name="Name" label="Username">
           <Input />
         </Form.Item>
