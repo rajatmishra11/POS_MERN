@@ -50,6 +50,7 @@ const itemPage = () => {
 
   useEffect(() => {
     getAllItems();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const coloums = [
@@ -86,7 +87,7 @@ const itemPage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        const res = await axios.post("/api/items/add-item", value);
+        await axios.post("/api/items/add-item", value);
         message.success("Item Added successfully");
         setPopupModel(false);
         getAllItems();
