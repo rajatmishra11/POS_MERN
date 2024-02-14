@@ -21,6 +21,9 @@
     overflow: auto
 }
 
+.ant-card {
+    margin-top: 15px;
+}
 
 .ant-layout-header {
     line-height: 0;

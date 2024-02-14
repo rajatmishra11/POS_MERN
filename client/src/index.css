@@ -21,6 +21,7 @@
 }
 
 .category {
+    margin-top: -35px;
     border: 2px solid rgb(179, 176, 176);
     margin-right: 50px;
     align-items: center;
