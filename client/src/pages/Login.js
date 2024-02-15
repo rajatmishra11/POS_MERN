@@ -1,16 +1,32 @@
 import React from "react";
 import { Button, Form, Input } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { message } from "antd";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
-  const handleSubmit = (value) => {
-    console.log(value);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSubmit = async (value) => {
+    dispatch({ type: "showLoading" });
+    axios
+      .post("/api/users/login", value)
+      .then((res) => {
+        dispatch({ type: "hideLoading" });
+        message.success("Login Successfully");
+        navigate("/");
+      })
+      .catch(() => {
+        dispatch({ type: "hideLoading" });
+        message.error("Login Failed");
+      });
   };
   return (
     <div className="register d-flex ">
       <h3>Login Here</h3>
       <Form layout="vertical" onFinish={handleSubmit}>
-        <Form.Item name="userID" label="User ID">
+        <Form.Item name="userId" label="User ID">
           <Input />
         </Form.Item>
         <Form.Item name="password" label="Password">

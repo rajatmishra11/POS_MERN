@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 // app.use(morgan("dev"));
 
 app.use("/api/items", require("./routes/itemRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 app.get("/", function (req, res) {
   res.send("Welcome to Website?");
