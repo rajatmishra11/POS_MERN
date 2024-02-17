@@ -13,7 +13,7 @@ router.post("/add-bill", async (req, res) => {
   }
 });
 
-router.get("/get-all-bills", async (req, res) => {
+router.get("/get-bills", async (req, res) => {
   try {
     const bills = await billModel.find();
     res.send(bills);

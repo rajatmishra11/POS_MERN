@@ -6,6 +6,8 @@ import ItemPage from "./pages/itemPage.js";
 import CartPage from "./pages/CartPage.js";
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
+import BillsPage from "./pages/billsPage.js";
+import CustomerPage from "./pages/customerPage.js";
 
 function App() {
   return (
@@ -32,6 +34,22 @@ function App() {
           element={
             <ProtectedRoute>
               <CartPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/bills"
+          element={
+            <ProtectedRoute>
+              <BillsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/customer"
+          element={
+            <ProtectedRoute>
+              <CustomerPage />
             </ProtectedRoute>
           }
         />

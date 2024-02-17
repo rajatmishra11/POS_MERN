@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector, useDispatch } from "react-redux";
+import {  useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   DeleteOutlined,
@@ -80,6 +81,8 @@ const CartPage = () => {
     setSubTotal(temp);
   }, [cartItems]);
 
+  const navigate = useNavigate();
+    
   //handle Submit->
   const handleSubmit = async (values) => {
     const reqObject = {
@@ -96,6 +99,7 @@ const CartPage = () => {
       .post("/api/bills/add-bill", reqObject)
       .then(() => {
         message.success("Bill Generated Successfully");
+        navigate("/bills")
       })
       .catch(() => {
         message.error("Billing Failed");
