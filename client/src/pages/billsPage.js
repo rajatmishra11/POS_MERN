@@ -97,7 +97,7 @@ function Bills() {
   useEffect(() => {
     getAllBills();
   }, []);
-  
+
    const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
@@ -120,10 +120,10 @@ function Bills() {
           width={800}
         >
           <div className="bill-model p-3" ref={componentRef} >
-            <div className="d-flex justify-content-between bill-header pb-2">
+            <div className="d-flex justify-content-between bill-header pb-2 ">
               <div>
                 <h1>
-                  <b>Osimo Resturent</b>
+                  <b>Osimo Restaurants</b>
                 </h1>
               </div>
               <div>
