@@ -46,7 +46,7 @@ function App() {
           }
         />
         <Route
-          path="/customer"
+          path="/customers"
           element={
             <ProtectedRoute>
               <CustomerPage />
