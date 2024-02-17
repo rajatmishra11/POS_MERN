@@ -12,7 +12,7 @@ import {
   CopyOutlined,
   UnorderedListOutlined,
   ShoppingCartOutlined,
-  ShopOutlined
+  ShopOutlined,
 } from "@ant-design/icons";
 
 import "../styles/DefaultLayout.css";
@@ -41,12 +41,12 @@ const DefaultLayout = ({ children }) => {
         alignSelf: "stretch",
       }}
     >
-      {loading && <Spinner/>}
+      {loading && <Spinner />}
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical">
           {" "}
           <h2 className="text-center text-white font-bold mt-2">
-           {<ShopOutlined />}
+            {<ShopOutlined />}
           </h2>
         </div>
         <Menu
@@ -66,7 +66,14 @@ const DefaultLayout = ({ children }) => {
           <Menu.Item key="/customers" icon={<UserOutlined />}>
             <Link to="/customers">My Customers</Link>
           </Menu.Item>
-          <Menu.Item key="/logout" icon={<LogoutOutlined />}>
+          <Menu.Item
+            key="/logout"
+            icon={<LogoutOutlined />}
+            onClick={() => {
+              localStorage.removeItem("auth");
+              navigate("/login");
+            }}
+          >
             <Link to="/logout">Logout</Link>
           </Menu.Item>
         </Menu>

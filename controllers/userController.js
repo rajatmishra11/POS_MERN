@@ -7,6 +7,14 @@ const loginController = async (req, res) => {
       password: req.body.password,
       verified: true,
     });
+    if (user) {
+      res.status(200).send(user);
+    } else {
+      res.json({
+        message: "Invalid Credentials",
+        user,
+      });
+    }
     res.status(200).send("Login Successful");
   } catch (error) {
     console.log(error);
@@ -15,7 +23,7 @@ const loginController = async (req, res) => {
 
 const registerController = async (req, res) => {
   try {
-    const newUser = new userModel(req.body);
+    const newUser = new userModel({ ...req.body, verified: true });
     await newUser.save();
     res.send("User Registered successfully");
   } catch (error) {

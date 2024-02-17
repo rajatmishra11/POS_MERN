@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,11 +10,12 @@ const Login = () => {
   const navigate = useNavigate();
   const handleSubmit = async (value) => {
     dispatch({ type: "showLoading" });
-    axios
+    await axios
       .post("/api/users/login", value)
       .then((res) => {
         dispatch({ type: "hideLoading" });
         message.success("Login Successfully");
+        localStorage.setItem("auth", JSON.stringify(res.data));
         navigate("/");
       })
       .catch(() => {
@@ -22,6 +23,12 @@ const Login = () => {
         message.error("Login Failed");
       });
   };
+  useEffect(() => {
+    if (localStorage.getItem("auth")){
+      navigate("/")
+    }
+  }, [navigate]);
+
   return (
     <div className="register d-flex ">
       <h3>Login Here</h3>

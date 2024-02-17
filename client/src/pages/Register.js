@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -24,6 +24,12 @@ const Register = () => {
         message.error("Something went wrong");
       });
   };
+  useEffect(() => {
+    if (localStorage.getItem("auth")) {
+      navigate("/");
+    }
+  }, [navigate]);
+
   return (
     <div className="register d-flex ">
       <h3>New User</h3>
