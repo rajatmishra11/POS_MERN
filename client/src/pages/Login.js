@@ -25,8 +25,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("auth")){
-      navigate("/")
+    if (localStorage.getItem("auth")) {
+      navigate("/");
     }
   }, [navigate]);
 

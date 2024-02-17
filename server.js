@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use("/api/items", require("./routes/itemRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/bills", require("./routes/billsRoutes"));
 
 app.get("/", function (req, res) {
   res.send("Welcome to Website?");

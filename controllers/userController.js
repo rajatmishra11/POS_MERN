@@ -8,16 +8,12 @@ const loginController = async (req, res) => {
       verified: true,
     });
     if (user) {
-      res.status(200).send(user);
+      res.send(user);
     } else {
-      res.json({
-        message: "Invalid Credentials",
-        user,
-      });
+      res.status(400).json({ message: "Login failed", user });
     }
-    res.status(200).send("Login Successful");
   } catch (error) {
-    console.log(error);
+    res.status(400).json(error);
   }
 };
 

@@ -14,25 +14,25 @@ function App() {
         <Route
           path="/"
           element={
-            <protectedRoute>
+            <ProtectedRoute>
               <Homepage />
-            </protectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/items"
           element={
-            <protectedRoute>
+            <ProtectedRoute>
               <ItemPage />
-            </protectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/cart"
           element={
-            <protectedRoute>
+            <ProtectedRoute>
               <CartPage />
-            </protectedRoute>
+            </ProtectedRoute>
           }
         />
         <Route path="/login" element={<Login />} />
@@ -44,14 +44,10 @@ function App() {
 
 export default App;
 
-export function protectedRoute({children}){
-
-    if(localStorage.getItem('auth'))
-    {
-      return children
-    }
-    else{
-      return <Navigate to='/login' />
-    }
-
+export function ProtectedRoute({ children }) {
+  if (localStorage.getItem("auth")) {
+    return children;
+  } else {
+    return <Navigate to="/login" />;
+  }
 }

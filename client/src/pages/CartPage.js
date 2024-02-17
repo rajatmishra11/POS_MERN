@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import {
   DeleteOutlined,
   PlusSquareOutlined,
   MinusSquareOutlined,
 } from "@ant-design/icons";
-import { Button, Table, Modal, Form, Input, Select} from "antd";
+import { Button, Table, Modal, Form, Input, Select, message } from "antd";
 
 const CartPage = () => {
   const { cartItems } = useSelector((state) => state.rootReducer);
@@ -80,8 +81,25 @@ const CartPage = () => {
   }, [cartItems]);
 
   //handle Submit->
-  const handleSubmit = (record) => {
-    console.log(record);
+  const handleSubmit = async (values) => {
+    const reqObject = {
+      ...values,
+      cartItems,
+      tax: Number(((subTotal / 100) * 10).toFixed(2)),
+      totalAmount: Number(
+        subTotal + Number(((subTotal / 100) * 10).toFixed(2))
+      ),
+      userId: JSON.parse(localStorage.getItem("auth"))._id,
+    };
+    console.log(reqObject);
+    await axios
+      .post("/api/bills/add-bill", reqObject)
+      .then(() => {
+        message.success("Bill Generated Successfully");
+      })
+      .catch(() => {
+        message.error("Billing Failed");
+      });
   };
   return (
     <DefaultLayout>
@@ -109,7 +127,7 @@ const CartPage = () => {
           <Form.Item name="customerName" label="Customer Name">
             <Input />
           </Form.Item>
-          <Form.Item name="contact" label="Contact Number">
+          <Form.Item name="customerNumber" label="Contact Number">
             <Input />
           </Form.Item>
           <Form.Item name="paymentMode" label="Payment Method">
