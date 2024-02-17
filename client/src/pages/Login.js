@@ -23,6 +23,7 @@ const Login = () => {
         message.error("Login Failed");
       });
   };
+
   useEffect(() => {
     if (localStorage.getItem("auth")){
       navigate("/")
