@@ -6,7 +6,7 @@ import {
   PlusSquareOutlined,
   MinusSquareOutlined,
 } from "@ant-design/icons";
-import { Button, Table, Modal, message } from "antd";
+import { Button, Table, Modal, Form, Input, Select} from "antd";
 
 const CartPage = () => {
   const { cartItems } = useSelector((state) => state.rootReducer);
@@ -79,6 +79,10 @@ const CartPage = () => {
     setSubTotal(temp);
   }, [cartItems]);
 
+  //handle Submit->
+  const handleSubmit = (record) => {
+    console.log(record);
+  };
   return (
     <DefaultLayout>
       <h1>Cart Page</h1>
@@ -94,13 +98,47 @@ const CartPage = () => {
         </Button>
       </div>
       <Modal
+        title="Create Invoice"
         open={billPopUp}
         onCancel={() => {
           setBillPopUp(false);
         }}
         footer={false}
       >
-        <p>Invoice Modal</p>
+        <Form layout="vertical" onFinish={handleSubmit}>
+          <Form.Item name="customerName" label="Customer Name">
+            <Input />
+          </Form.Item>
+          <Form.Item name="contact" label="Contact Number">
+            <Input />
+          </Form.Item>
+          <Form.Item name="paymentMode" label="Payment Method">
+            <Select>
+              <Select.Option value="cash">Cash</Select.Option>
+              <Select.Option value="card">Card</Select.Option>
+              <Select.Option value="upi">UPI</Select.Option>
+            </Select>
+          </Form.Item>
+          <div className="bill">
+            <h6>
+              Amount: <span>&#8377;</span>
+              <b>{subTotal}</b>{" "}
+            </h6>
+            <h6>
+              GST :<span>&#8377;</span>
+              <b>{(subTotal * 0.1).toFixed(2)}</b>{" "}
+            </h6>
+            <h4>
+              Total Amount: <span>&#8377;</span>
+              <b>{(subTotal + subTotal * 0.1).toFixed(2)}</b>{" "}
+            </h4>
+          </div>
+          <div className="d-flex justify-content-end">
+            <Button type="primary" htmlType="submit">
+              Generate Bill
+            </Button>
+          </div>
+        </Form>
       </Modal>
     </DefaultLayout>
   );
