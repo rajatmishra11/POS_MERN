@@ -20,13 +20,13 @@ This is a full-stack web application developed for managing the point of sale (P
 
 2.  Features:-
 -------------------------------------------------------
-2.1  User authentication (Login/Register)
-2.2  CRUD operations for items
-2.3  Adding items to the cart
-2.4  Billing generation with PDF support
-2.5  Customer management
-2.6  User-friendly interface
-2.7  Responsive design for multiple devices
+      2.1  User authentication (Login/Register)
+      2.2  CRUD operations for items
+      2.3  Adding items to the cart
+      2.4  Billing generation with PDF support
+      2.5  Customer management
+      2.6  User-friendly interface
+      2.7  Responsive design for multiple devices
 
 
 
@@ -48,27 +48,27 @@ This is a full-stack web application developed for managing the point of sale (P
 4.  Usage
 --------------------------------------------------------------
 
-Register a new account or login with existing credentials.
-Add items to the cart from the available menu.
-Review the cart and proceed to billing.
-Generate a PDF bill for the order.
-Manage inventory and customer data as needed.
+      Register a new account or login with existing credentials.
+      Add items to the cart from the available menu.
+      Review the cart and proceed to billing.
+      Generate a PDF bill for the order.
+      Manage inventory and customer data as needed.
 
 
 
 
 5.  API Endpoints
 --------------------------------------------------------------
-POST /api/users/register: Register a new user.
-POST /api/users/login: Login a user.
-GET /api/items: Get all items.
-POST /api/items: Add a new item.
-PUT /api/items/:id: Update an existing item.
-DELETE /api/items/:id: Delete an item.
-GET /api/customers: Get all customers.
-POST /api/customers: Add a new customer.
-PUT /api/customers/:id: Update an existing customer.
-DELETE /api/customers/:id: Delete a customer.
+      POST /api/users/register: Register a new user.
+      POST /api/users/login: Login a user.
+      GET /api/items: Get all items.
+      POST /api/items: Add a new item.
+      PUT /api/items/:id: Update an existing item.
+      DELETE /api/items/:id: Delete an item.
+      GET /api/customers: Get all customers.
+      POST /api/customers: Add a new customer.
+      PUT /api/customers/:id: Update an existing customer.
+      DELETE /api/customers/:id: Delete a customer.
 __________________________________________________________________________________________________________________________________________________________
 6.Screenshots
 
