@@ -68,7 +68,17 @@ POST /api/customers: Add a new customer.
 PUT /api/customers/:id: Update an existing customer.
 DELETE /api/customers/:id: Delete a customer.
 
+6.ScreenShots
+------------------------------------------------------------------
 
+<img width="960" alt="Screenshot 2024-02-18 014800" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/be1574c5-6bc2-407f-a529-07a72dd5c42b">
+<img width="958" alt="Screenshot 2024-02-14 223841" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/a4e87ed7-ed65-47b8-afce-0f11a723b1de">
+<img width="960" alt="Screenshot 2024-02-14 223854" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/93f36b1c-0dab-40ed-b3d2-a74fb64fc5e8">
+<img width="960" alt="Screenshot 2024-02-18 015648" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/523d2c89-4065-4aed-8df3-7e6e2df43f69">
+<img width="947" alt="Screenshot 2024-02-18 015633" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/365b3e93-3384-42b6-acdf-12390b63cf9a">
+<img width="826" alt="Screenshot 2024-02-18 015620" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/95ae2707-1ce7-4501-ac16-e29fdb7920ad">
+<img width="960" alt="Screenshot 2024-02-18 015555" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/4ab8ca20-f293-44b7-8d66-07c1c13d70fd">
+<img width="957" alt="Screenshot 2024-02-18 014902" src="https://github.com/rajatmishra11/POS_MERN/assets/96973292/d7522422-81c3-4ed9-b0dd-03d2177fe5a7">
 
 7.  Contributing
 -----------------------------------------------------------------------------------------------------------
