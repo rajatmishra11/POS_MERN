@@ -12,7 +12,7 @@ Table of Contents
 7.  Contributing
 8.  License
 
-
+_____________________________________________________________________________________________________________________________________________________________________________
 1.  Introduction
 --------------------
 This is a full-stack web application developed for managing the point of sale (POS) system in restaurants. The system allows restaurant staff to handle customer orders, generate bills in PDF format, manage inventory, and handle user authentication.
