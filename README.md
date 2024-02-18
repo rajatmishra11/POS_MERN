@@ -17,7 +17,7 @@ ________________________________________________________________________________
 
 This is a full-stack web application developed for managing the point of sale (POS) system in restaurants. The system allows restaurant staff to handle customer orders, generate bills in PDF format, manage inventory, and handle user authentication.
 
-___________________________________________________
+----------------------------------------------------------
 2.  Features:-
 
 2.1  User authentication (Login/Register)
@@ -29,7 +29,7 @@ ___________________________________________________
 2.7  Responsive design for multiple devices
 
 
-_______________________________________________
+--------------------------------------------------------------
 3.  Technologies Used
 
       3.1 Frontend:
