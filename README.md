@@ -26,7 +26,6 @@ This is a full-stack web application developed for managing the point of sale (P
       2.4  Billing generation with PDF support
       2.5  Customer management
       2.6  User-friendly interface
-      2.7  Responsive design for multiple devices
 
 
 
