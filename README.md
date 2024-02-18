@@ -45,8 +45,8 @@ This is a full-stack web application developed for managing the point of sale (P
           Mongoose for MongoDB object modeling
 
 
-_______________________________________________________________
 4.  Usage
+--------------------------------------------------------------
 
 Register a new account or login with existing credentials.
 Add items to the cart from the available menu.
@@ -56,8 +56,9 @@ Manage inventory and customer data as needed.
 
 
 
-________________________________________________________
+
 5.  API Endpoints
+--------------------------------------------------------------
 POST /api/users/register: Register a new user.
 POST /api/users/login: Login a user.
 GET /api/items: Get all items.
