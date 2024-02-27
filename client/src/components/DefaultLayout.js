@@ -36,9 +36,8 @@ const DefaultLayout = ({ children }) => {
   return (
     <Layout
       style={{
-        height: 597,
+        height: 790,
         padding: 15,
-        alignSelf: "stretch",
       }}
     >
       {loading && <Spinner />}
