@@ -96,6 +96,7 @@ function Bills() {
 
   useEffect(() => {
     getAllBills();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
    const handlePrint = useReactToPrint({
